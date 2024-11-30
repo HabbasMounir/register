@@ -466,7 +466,7 @@ export  function SecPage ({data,hundler,lang}) {
     let beforEd=value.split('\r\n')[value.split('\r\n').length-3]
     let lstEd=value.split('\r\n')[value.split('\r\n').length-2]
 
-if (event.changes[0].text.includes(event.eol)) {
+if (event.changes[0].text.includes(event.eol)&&value.split('\r\n')[value.split('\r\n').length-2].length>0) {
   beforEd==messages[0]?myEd[value.split('\r\n').length-2]=`const name='${lstEd}'`:''
   beforEd==messages[1]?myEd[value.split('\r\n').length-2]=`const lastName='${lstEd}'`:''
   beforEd==messages[2]?myEd[value.split('\r\n').length-2]=`let email='${lstEd}'`:''
