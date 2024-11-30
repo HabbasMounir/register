@@ -7,7 +7,7 @@ import OneDarkPro from './theme/onedarkpro.json';
 
 
 
-export default function Registre (props) {
+export default function Register (props) {
   const [caseStudy, setCaseStudy] = useState();
   const [lang, SetLang] = useState('ar');
   const [step,SetStep] =useState(0)
