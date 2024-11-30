@@ -1,6 +1,6 @@
 import { Routes,Route, useLocation } from 'react-router-dom'
-import Register  from '../pages/registre/register'
-import MYEditor from '../pages/editor/regisRegistertre '
+import Register  from '../pages/register/Register'
+import MYEditor from '../pages/editor/register '
 
 export default function MainRoutes() {
   return (
