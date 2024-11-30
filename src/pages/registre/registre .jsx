@@ -525,9 +525,13 @@ return(
   onChange={handleEditorChange}
   theme="OneDarkPro" 
   options={{
-    // scrollBeyondLastLine:false,
+    scrollBeyondLastLine:false,
     fontSize:"16",
     acceptSuggestionOnCommitCharacte:false,
+    glyphMargin: false,
+folding: false,
+lineNumbers: "off",
+minimap: { enabled: false }
     // fontFamily: ['Segoe UI', "Tahoma", "Geneva", "Verdana", "sans-serif"]
 }}
 />
