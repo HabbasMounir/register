@@ -5,7 +5,7 @@ import MYEditor from '../pages/editor/registre '
 export default function MainRoutes() {
   return (
      <Routes> 
-      <Route path='/' element=''/>
+      <Route path='/' element={<Registre/>}/>
         <Route path='/registre' element={<Registre/>}/>
         <Route path='/editor' element={<MYEditor/>}/>
         
