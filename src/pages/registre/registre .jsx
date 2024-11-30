@@ -438,13 +438,14 @@ export  function SecPage ({data,hundler,lang}) {
   const [line,setLine]=useState(0)
   
   const [editorVal,setEditorVal]=useState('')
-  const [lasteditorVal,setLastEditorVal]=useState(`// give us ur name  \r\n `)
+  const [toggle,setToggle]=useState(false)
+
   const [messages,setMessages]=useState([
-    '// give us ur name  \r\n const name=\'\'',
-    '// give us ur last name \r\n  const lastName=\'\'',
-    '// give us ur email  \r\n let email=\'\'',
-    '// give us ur phone  \r\n let phone=\'\'',
-    '// give us ur willaya  \r\n let willaya=\'\' ',
+    '// give us ur name',
+    '// give us ur last name',
+    '// give us ur email',
+    '// give us ur phone',
+    '// give us ur willaya ',
   
   ])
   const [isch,setIsch]=useState(true)
@@ -456,20 +457,46 @@ export  function SecPage ({data,hundler,lang}) {
 
   function handleEditorChange(value, event) {
     event.changes[0].text.includes(event.eol)&&value.split('\r\n')[value.split('\r\n').length-2].length>0&&setLine(line+1)
-    event.changes[0].rangeOffset==0&&setLine(0)
+    value.length==0&&setLine(0)
+    value.length==0&&setToggle(!toggle)
+    // console.log(value.length==0)
+    
+
+    let myEd=value.split('\r\n')
+    let beforEd=value.split('\r\n')[value.split('\r\n').length-3]
+    let lstEd=value.split('\r\n')[value.split('\r\n').length-2]
+
+if (event.changes[0].text.includes(event.eol)) {
+  beforEd==messages[0]?myEd[value.split('\r\n').length-2]=`const name='${lstEd}'`:''
+  beforEd==messages[1]?myEd[value.split('\r\n').length-2]=`const lastName='${lstEd}'`:''
+  beforEd==messages[2]?myEd[value.split('\r\n').length-2]=`let email='${lstEd}'`:''
+  beforEd==messages[3]?myEd[value.split('\r\n').length-2]=`let phone='${lstEd}'`:''
+  beforEd==messages[4]?myEd[value.split('\r\n').length-2]=`let willaya='${lstEd}'`:''
+  setEditorVal(myEd.join('\r\n'))
+}else{
+  setEditorVal(value)
+}
+  
     // setLine(event.changes[0].range.endLineNumber)
-    setEditorVal(value)
+
+    // setEditorVal(value)
     // if (monaco) {
     //   console.log('here is the monaco instance:', monaco);
     // }
   }
-
+  const [lastMessage,setLastmessage]=useState(`type ={
+send:"to send form",
+edit:"to edit form",
+del:"to delet form",
+check:"to check form",
+    }
+    `)
   useEffect(()=>{
     // console.log(messages.length,line)
     // if (editorVal=='') setEditorVal('')
       
     
-    let newArray =messages.length>line? messages[line].split(''):`// whrite : \r\n //'send' to send the form \r\n //"delete" to delete the form  \r\n //check to check ur data \r\n `.split('')
+    let newArray =messages.length>line? [...messages[line],'\r\n'].join('').split(''):lastMessage.split('')
     let neweditorVal=editorVal
     let myvald=''
     for (let i = 0; i < newArray.length; i++) {
@@ -481,12 +508,12 @@ export  function SecPage ({data,hundler,lang}) {
       // setTimeout(()=>console.log(myvald),1000*i)
       
     }
-  },[line])
+  },[line,toggle])
 return(
   <div className={Style.Peditor}  dir='ltr'>
-    {editorVal}
-    {line}
-    <input style={{color:'red'}} onChange={(e)=>setLanguage(e.target.value)} value={language} type="text" />
+    {/* {editorVal} */}
+    {/* {line} */}
+    {/* <input style={{color:'red'}} onChange={(e)=>setLanguage(e.target.value)} value={language} type="text" /> */}
  {isch&&
   <Editor 
   loading={<h1>asdsa</h1>}

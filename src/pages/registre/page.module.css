@@ -365,7 +365,7 @@ button.hidden{
 .Peditor{
   min-height: 50vh;
   height: 100vh;
-  max-height: 60vh;
+  max-height: 75vh;
   resize: horizontal;
   display: flex;
   flex-direction: column;
