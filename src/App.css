@@ -1,0 +1,72 @@
+*{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+ *::selection{
+  color: var(--SecColor1);
+  background-color: #cacacab0;
+  outline: 2px solid red;
+  border: 2px solid red;
+  font-weight: 800;
+} 
+
+img{
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+a{ all: unset;}
+:root{
+  /* Color Theme Swatches in Hex */
+  --mainColor: #2b373d; 
+  --w: #ffffff ;
+  --SecColor: #607b89; 
+  --SecColor1:#2b373d; 
+  --mainColorss: #2b373d44; 
+
+
+ --mainColor: #051934; 
+ --w: #ffffff ;
+ --SecColor: #216d7a; 
+ --SecColor1:#cedde9; 
+ --mainColorss: #2b373d44; 
+
+
+
+
+
+
+}
+html 
+{
+  /* width: 100vw; */
+  scrollbar-gutter: stable;
+  background: linear-gradient(to left, #0f2956 , var(--SecColor)); 
+  background-color:  #0f2956 ; 
+
+overflow-x: hidden;
+/* background-color: #ffffff; */
+
+/* scrollbar-gutter: revert; */
+/* scrollbar-gutter: revert-layer; */
+}
+
+.content{
+  /* height: 1000vh; */
+  /* overflow: scroll; */
+}
+::-webkit-scrollbar {width: 10px; }
+::-webkit-scrollbar-track {background: #ff00f207;border-radius: 0px;margin: 0px;}
+::-webkit-scrollbar-thumb {background: #000; border-radius: 0px; }
+::-webkit-scrollbar-thumb:hover {background: linear-gradient(to top, var(--mainColor) , var(--SecColor)); }
+
+body{
+  height: 100vh;
+  width: 100vw;
+}
+
+
+
+
