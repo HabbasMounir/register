@@ -504,7 +504,7 @@ check:"to check form",
     setTimeout(()=>{
       myvald+=newArray[i]
       setEditorVal([...neweditorVal,myvald].join(''))
-    },100*(i))
+    },150*(i))
       // setTimeout(()=>console.log(myvald),1000*i)
       
     }
@@ -514,7 +514,7 @@ return(
     {/* {editorVal} */}
     {/* {line} */}
     {/* <input style={{color:'red'}} onChange={(e)=>setLanguage(e.target.value)} value={language} type="text" /> */}
- {isch&&
+ {/* {isch&& */}
   <Editor 
   loading={<h1>asdsa</h1>}
   line={2}
@@ -535,7 +535,7 @@ minimap: { enabled: false }
     // fontFamily: ['Segoe UI', "Tahoma", "Geneva", "Verdana", "sans-serif"]
 }}
 />
- } 
+ {/* }  */}
  
   </div>
  
