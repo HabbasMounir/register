@@ -4,7 +4,8 @@ import './App.css'
 import Cursor from './cursor';
 import { Routes,Route, useLocation } from 'react-router-dom'
 import MainRoutes from './routes/mainRoutes';
-
+import { BarcodeScanner } from 'react-barcode-scanner'
+import "react-barcode-scanner/polyfill"
 
 function App() {
   const [dataState, setDataState] = useState("waite")
@@ -52,9 +53,9 @@ function App() {
   return (
     <>
       {/* <LoadingPage  dataState={dataState}/> */}
-      <Cursor ele="a,button,hover"/>
-     
-      <MainRoutes> </MainRoutes> 
+      {/* <Cursor ele="a,button,hover"/> */}
+      <BarcodeScanner />
+      {/* <MainRoutes> </MainRoutes>  */}
       {/* <Footer></Footer> */}
       
     </>

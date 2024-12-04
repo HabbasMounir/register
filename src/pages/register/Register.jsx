@@ -459,7 +459,7 @@ export  function SecPage ({data,hundler,lang}) {
     event.changes[0].text.includes(event.eol)&&value.split('\r\n')[value.split('\r\n').length-2].length>0&&setLine(line+1)
     value.length==0&&setLine(0)
     value.length==0&&setToggle(!toggle)
-    // console.log(value.length==0)
+    console.log(event.changes[0])
     
 
     let myEd=value.split('\r\n')
