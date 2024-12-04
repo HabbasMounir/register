@@ -2,7 +2,6 @@ import Style from "./page.module.css"
 import { useEffect, useState } from "react"
 import { useParams,useLocation   } from "react-router-dom"
 import {Helmet} from "react-helmet";
-import OneDarkPro from './theme/onedarkpro.json';
 
 
 
